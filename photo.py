@@ -5,7 +5,7 @@ import os
 import glob
 import re
 
-out_dir = "./photos/headphones"
+out_dir = "./photos/buds"
 os.makedirs(out_dir, exist_ok=True)
 
 existing_files = glob.glob(os.path.join(out_dir, "frame_*.png"))
@@ -21,7 +21,7 @@ config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 pipeline.start(config)
 
 try:
-    frames_to_save = 15
+    frames_to_save = 10
     saved_count = 0 
     while saved_count < frames_to_save:
         frames = pipeline.wait_for_frames()
